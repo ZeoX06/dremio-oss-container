@@ -15,7 +15,7 @@ WORKDIR /dremio
 RUN mvn clean install -e -DskipTests=true -Dlicense.skip=true
 
 
-FROM openjdk:8u181-jdk-slim
+FROM openjdk:8-jre-slim
    
 COPY --from=build /dremio/distribution/server/target/*.tar.gz /tmp/dremio.tar.gz
 

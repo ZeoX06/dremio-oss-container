@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  ubuntu:
+    image: zeox06/dremio-oss
+    build:
+      context: .
+  alpine:
+    image: zeox06/dremio-oss:alpine
+    build:
+      context: ./alpine
+  slim:
+    image: zeox06/dremio-oss:slim
+    build:
+      context: ./slim

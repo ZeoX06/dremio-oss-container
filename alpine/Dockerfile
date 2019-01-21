@@ -15,10 +15,11 @@ WORKDIR /dremio
 RUN mvn clean install -e -DskipTests=true -Dlicense.skip=true
 
 
-FROM ubuntu:18.04
+FROM openjdk:8-jre-alpine
 
-RUN apt-get update && \
-    apt-get install -y openjdk-8-jre
+RUN apk add --no-cache bash \
+    procps \
+    libc6-compat
     
 COPY --from=build /dremio/distribution/server/target/*.tar.gz /tmp/dremio.tar.gz
 
