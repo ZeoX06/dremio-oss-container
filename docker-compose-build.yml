@@ -2,14 +2,14 @@ version: "3"
 
 services:
   ubuntu:
-    image: zeox06/dremio-oss
+    image: zeox06/dremio-oss:v2020.2-4.1.4
     build:
       context: .
   alpine:
-    image: zeox06/dremio-oss:alpine
+    image: zeox06/dremio-oss:alpine-v2020.2-4.1.4
     build:
       context: ./alpine
   slim:
-    image: zeox06/dremio-oss:slim
+    image: zeox06/dremio-oss:slim-v2020.2-4.1.4
     build:
       context: ./slim

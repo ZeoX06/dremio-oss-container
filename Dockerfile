@@ -8,7 +8,7 @@ RUN apt-get update && \
     nodejs \
     npm
    
-RUN git clone -b "patch" https://github.com/ZeoX06/dremio-oss.git dremio
+RUN git clone -b "patch-v2020.2-4.1.4" https://github.com/ZeoX06/dremio-oss.git dremio
 
 WORKDIR /dremio
 
