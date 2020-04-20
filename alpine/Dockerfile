@@ -8,7 +8,7 @@ RUN apt-get update && \
     nodejs \
     npm
    
-RUN git clone -b "patch-v2020.2-4.1.4" https://github.com/ZeoX06/dremio-oss.git dremio
+RUN git clone https://github.com/dremio/dremio-oss.git dremio
 
 WORKDIR /dremio
 
@@ -21,7 +21,7 @@ RUN apk add --no-cache bash \
     procps \
     libc6-compat
     
-COPY --from=build /dremio/distribution/server/target/*.tar.gz /tmp/dremio.tar.gz
+COPY --from=build /dremio/distribution/server/target/dremio*.tar.gz /tmp/dremio.tar.gz
 
 WORKDIR /dremio
 
