@@ -8,14 +8,14 @@ RUN apt-get update && \
     nodejs \
     npm
    
-RUN git https://github.com/dremio/dremio-oss.git dremio
+RUN git clone https://github.com/dremio/dremio-oss.git dremio
 
 WORKDIR /dremio
 
 RUN mvn clean install -e -DskipTests=true -Dlicense.skip=true
 
 
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 RUN apt-get update && \
     apt-get install -y openjdk-8-jre
